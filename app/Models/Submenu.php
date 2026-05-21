@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+
+class Submenu extends Model
+{
+    protected $fillable = ['user_id', 'menu_id', 'name', 'slug', 'url', 'icon', 'active_status'];
+
+    /** @return BelongsTo<Menu, $this> */
+    public function menu(): BelongsTo
+    {
+        return $this->belongsTo(Menu::class);
+    }
+    /** @return BelongsTo<User, $this> */
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
+}

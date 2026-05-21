@@ -1,0 +1,24 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+
+parameters:
+    level: 9
+
+    paths:
+        - app
+        - routes
+        - database
+
+    tmpDir: storage/phpstan
+
+    treatPhpDocTypesAsCertain: true
+
+    reportUnmatchedIgnoredErrors: true
+
+    inferPrivatePropertyTypeFromConstructor: true
+
+    universalObjectCratesClasses:
+        - stdClass
+
+    parallel:
+        maximumNumberOfProcesses: 4
